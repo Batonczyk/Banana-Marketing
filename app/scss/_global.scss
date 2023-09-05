@@ -1,0 +1,149 @@
+body {
+  min-height: 100vh;
+  @extend %opensans-300;
+  font-size: 14px;
+  line-height: 1.7;
+  color: $default;
+  background-color: $white;
+}
+
+.container {
+  max-width: 1190px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.title {
+  position: relative;
+  align-self: flex-start;
+  padding-bottom: 18px;
+  font-size: 60px;
+  @extend %montserrat-700;
+  color: $title;
+  letter-spacing: -1.65px;
+  line-height: 1.5;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background-color: $orange;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.active-btn {
+  color: $orange;
+  border-bottom: 1px solid $default;
+  transition:
+    border-bottom 0.3s ease,
+    color 0.3s ease;
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.modal {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: background-color 0.3s ease;
+  animation: slideIn 0.1s ease-in-out;
+
+  &__close {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 17px;
+    font-weight: 500;
+    color: $orange;
+    cursor: pointer;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__video {
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%;
+    max-height: 600px;
+    height: 100%;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 10%;
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $title;
+    opacity: 0.4;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 13px;
+    }
+  }
+
+  .active {
+    width: 10px;
+    height: 10px;
+    background-color: #4c4949;
+    opacity: 1;
+  }
+}
+
+.active-menu {
+  padding: 15px 0;
+}
+
+.unscroll{
+   overflow: hidden;
+}
+

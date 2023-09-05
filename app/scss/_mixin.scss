@@ -1,0 +1,23 @@
+@mixin xxl() {
+    @media (max-width: $breakpoints__xxl) {
+        @content;
+    }
+}
+
+@mixin xl() {
+    @media (max-width: $breakpoints__xl) {
+        @content;
+    }
+}
+
+@mixin md() {
+    @media (max-width: $breakpoints__md) {
+        @content;
+    }
+}
+
+@mixin sm() {
+    @media (max-width: $breakpoints__sm) {
+        @content;
+    }
+}

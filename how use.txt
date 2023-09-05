@@ -1,0 +1,3 @@
+<svg class="svg-btn" fill="none">
+    <use xlink:href="images/sprite.svg#icon-search"></use>
+</svg>
