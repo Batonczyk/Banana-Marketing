@@ -890,6 +890,10 @@
     background-color: #fff;
     border: 2px solid $default;
     transform: rotateY(-180deg);
+
+    @include r(768) {
+      right: 0;
+    }
   }
 
   &__list:hover {
@@ -947,13 +951,35 @@
   padding: 144px 0 162px;
   background-color: #f6f8fa;
 
+  @include r(992) {
+    padding: 60px 0 70px;
+  }
+
+  @include r(576) {
+    padding: 20px 0 30px;
+  }
+
   &__title {
     margin-bottom: 90px;
+
+    @include r(992) {
+      font-size: 48px;
+      margin-bottom: 50px;
+    }
+
+    @include r(576) {
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
   }
 
   &__inner {
     display: flex;
     justify-content: space-between;
+
+    @include r(576) {
+      display: block;
+    }
   }
 
   &__items {
@@ -968,6 +994,27 @@
     &:hover {
       outline: 2px solid $orange;
     }
+
+    &:not(:last-child) {
+      margin-right: 30px;
+
+      @include r(768) {
+        margin-right: 15px;
+      }
+
+      @include r(576) {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    @include r(768) {
+      padding: 21px 20px 30px;
+    }
+
+    @include r(576) {
+      max-width: 100%;
+    }
   }
 
   &__item {
@@ -977,8 +1024,16 @@
     line-height: 1.4;
     color: $title;
 
+    @include r(768) {
+      font-size: 12px;
+    }
+
     &:not(:last-child) {
       margin-bottom: 30px;
+
+      @include r(992) {
+        margin-bottom: 10px;
+      }
     }
   }
 
@@ -986,6 +1041,10 @@
     margin-bottom: 8px;
     text-align: left;
     font-weight: bold;
+
+    @include r(768) {
+      margin-bottom: 3px;
+    }
   }
 
   &__num {
@@ -993,10 +1052,28 @@
     font-size: 80px;
     font-weight: 300;
     line-height: 1.5;
+
+    @include r(992) {
+      margin-bottom: 10px;
+      font-size: 60px;
+    }
+
+    @include r(768) {
+      margin-bottom: 10px;
+      font-size: 40px;
+    }
   }
 
   &__num sup {
     font-size: 40px;
+
+    @include r(992) {
+      font-size: 30px;
+    }
+
+    @include r(768) {
+      font-size: 20px;
+    }
   }
 
   &__link {
@@ -1006,6 +1083,11 @@
     font-weight: 700;
     letter-spacing: 1.2px;
     transition: color 0.2s ease;
+
+    @include r(768) {
+      margin-top: 30px;
+      font-size: 12px;
+    }
 
     &:hover {
       color: $orange;
@@ -1024,11 +1106,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include r(576) {
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
   }
 
-  &__item:hover {
-    transition: transform 0.4s ease;
-    transform: scale(1.1);
+  &__item {
+    &:hover {
+      transition: transform 0.4s ease;
+      transform: scale(1.1);
+    }
+
+    @include r(576) {
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -1037,22 +1130,52 @@
   padding: 145px 0 165px;
   overflow: hidden;
 
+  @include r(992) {
+    padding: 60px 0 70px;
+  }
+
+  @include r(576) {
+    padding: 20px 0 30px;
+  }
+
   &__title {
     margin-bottom: 94px;
+
+    @include r(992) {
+      font-size: 48px;
+      margin-bottom: 50px;
+    }
+
+    @include r(576) {
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
   }
 
   &__inner {
     display: flex;
+
+    @include r(992) {
+      display: block;
+    }
   }
 
   &__form {
     max-width: 570px;
     width: 100%;
+
+    @include r(992) {
+      max-width: 100%;
+    }
   }
 
   &__input {
     &:not(:last-child) {
       margin-bottom: 32px;
+
+      @include r(768) {
+        margin-bottom: 15px;
+      }
     }
   }
 
@@ -1069,6 +1192,14 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 3.709px;
+
+      @include r(768) {
+        font-size: 10px;
+      }
+    }
+
+    @include r(768) {
+      padding: 0 10px 10px 0;
     }
   }
 
@@ -1076,6 +1207,15 @@
     min-height: 140px;
     margin-bottom: 40px;
     resize: none;
+
+    @include r(768) {
+      margin-bottom: 30px;
+    }
+
+    @include r(576) {
+      max-height: 100px;
+      margin-bottom: 25px;
+     }
   }
 
   &__btn {
@@ -1099,15 +1239,28 @@
       color: $title;
       transform: scale(0.9);
     }
+
+    @include r(768) {
+      padding: 13px 48px 13px;
+    }
+
+    @include r(576) {
+     font-size: 8px;
+     padding: 10px 38px 10px;
+    }
   }
 
   iframe {
+    height: 100%;
+    width: 40%;
     position: absolute;
     pointer-events: none;
     top: 0;
     right: 0;
-    height: 100%;
-    width: 640px;
+
+    @include r(992) {
+      display: none;
+    }
   }
 }
 
@@ -1125,6 +1278,17 @@
     padding: 110px 10px 60px;
     max-width: 700px;
     margin: 0 auto;
+
+    @include r(768) {
+      padding: 50px 10px 50px;
+      margin-right: 0;
+      margin-bottom: 10px;
+      font-size: 10px;
+    }
+
+    @include r(576) {
+      padding: 50px 10px 25px;
+    }
   }
 
   &__logo {
@@ -1140,6 +1304,11 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 65px;
+
+    @include r(768) {
+     flex-wrap: wrap;
+     margin-bottom: 35px;
+    }
   }
 
   &__item {
@@ -1150,10 +1319,23 @@
     transition: 0.3s ease-in-out;
     &:not(:last-child) {
       margin-right: 33px;
+
+      @include r(768) {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    @include r(768) {
+      font-size: 10px;
     }
 
     &:hover {
       color: $orange;
+    }
+
+    @include r(768) {
+      width: 33.333%;
     }
   }
 
@@ -1161,6 +1343,10 @@
     font-size: 14px;
     line-height: 2.2;
     font-style: normal;
+
+    @include r(768) {
+   font-size: 12px;
+    }
   }
 
   .tel,
@@ -1172,11 +1358,19 @@
   .arrowup {
     display: block;
     margin-top: 57px;
+
+    @include r(768) {
+      margin-top: 25px;
+    }
   }
 
   &__bottom {
     padding: 43px 10px 41px;
     background-color: $title;
     font-size: 12px;
+
+    @include r(576) {
+      padding: 20px 10px 20px;
+    }
   }
 }

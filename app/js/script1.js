@@ -91,47 +91,47 @@ function scrollEnable() {
 
 // // ==== form POST
 
-// const form = document.querySelector(".getform__form");
+const form = document.querySelector(".getform__form");
 
-// form.addEventListener("submit", function (e) {
-//   fetch("/index/", {
-//     method: "POST",
-//     body: new FormData(this),
-//   })
-//     .then((response) => {
-//       if (!response.ok) {
-//         throw new Error(response.status);
-//       }
-//       return response.text();
-//     })
-//     .then((text) => {
-//       alert(text);
-//     })
-//     .catch((err) => {
-//       alert(`Sorry, your data is not get server. Please try again ${err}`);
-//     });
-//   e.preventDefault();
-// });
+form.addEventListener("submit", function (e) {
+  fetch("/index/", {
+    method: "POST",
+    body: new FormData(this),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(response.status);
+      }
+      return response.text();
+    })
+    .then((text) => {
+      alert(text);
+    })
+    .catch((err) => {
+      alert(`Sorry, your data is not get server. Please try again ${err}`);
+    });
+  e.preventDefault();
+});
 
-// // function validate email input
+// function validate email input
 
-// const inputEmail = document.querySelector(".getform__input--email");
-// const validate =
-//   /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+const inputEmail = document.querySelector(".getform__input--email");
+const validate =
+  /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 
-// inputEmail.addEventListener("blur", inputValid);
+inputEmail.addEventListener("blur", inputValid);
 
-// function inputValid() {
-//   if (valid(inputEmail.value)) {
-//     inputEmail.style.backgroundColor = "#90f5a8";
-//   } else {
-//     inputEmail.style.backgroundColor = "#f56151";
-//   }
-// }
+function inputValid() {
+  if (valid(inputEmail.value)) {
+    inputEmail.style.backgroundColor = "#90f5a8";
+  } else {
+    inputEmail.style.backgroundColor = "#f56151";
+  }
+}
 
-// function valid(val) {
-//   return validate.test(val);
-// }
+function valid(val) {
+  return validate.test(val);
+}
 
 // // ==== Menu Burger
 
