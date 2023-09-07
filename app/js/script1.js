@@ -3,7 +3,7 @@ slider();
 
 const categoryBtn = document.querySelectorAll(".portfolio__btn");
 const contentImage = document.querySelectorAll(".portfolio-content__item");
-const container = document.querySelector('.portfolio-content__items');
+const container = document.querySelector(".portfolio-content__items");
 
 // ======= Mix Element portfolio =======
 
@@ -19,7 +19,7 @@ categoryBtn.forEach((elem) => {
     const dataFilter = elem.getAttribute("data-filter");
 
     const imgItems = [];
-  
+
     contentImage.forEach((img) => {
       const dataItem = img.getAttribute("data-item");
 
@@ -29,9 +29,9 @@ categoryBtn.forEach((elem) => {
         img.classList.add("hide");
       }
     });
-    console.log(imgItems)
+    console.log(imgItems);
     container.innerHTML = "";
-    console.log(container)
+    console.log(container);
 
     imgItems.forEach((elem) => {
       container.appendChild(elem);
@@ -150,3 +150,27 @@ burger.addEventListener("click", function (e) {
     elem.classList.toggle("menu__list--active");
   });
 });
+
+// smooth scroll section
+
+const elemsLink = document.querySelectorAll('a[href*="#"]');
+const dataAttr = document.querySelectorAll('[data-scroll]');
+
+elemsLink.forEach((link) => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const targetId = link.getAttribute('href').substring(1); // delite first symbol href #
+
+    dataAttr.forEach((elem) => {
+      if(elem.dataset.scroll === targetId){
+        console.log(elem.dataset.scroll)
+        elem.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    })
+  });
+});
+

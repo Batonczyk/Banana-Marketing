@@ -11,7 +11,7 @@
 
 <body>
 
-  <header class="header">
+  <header class="header" data-scroll="home">
     <div class="header-top">
       <div class="container">
         <nav class="menu">
@@ -25,27 +25,27 @@
               </a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="#">
+              <a class="menu__list-link" href="#about">
                 ABOUT US
               </a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="#">
+              <a class="menu__list-link" href="#portfolio">
                 PORTFOLIO
               </a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="#">
+              <a class="menu__list-link" href="#team">
                 OUR TEAM
               </a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="#">
+              <a class="menu__list-link" href="#blog">
                 BLOG
               </a>
             </li>
             <li class="menu__list-item">
-              <a class="menu__list-link" href="#">
+              <a class="menu__list-link" href="#contact">
                 CONTACT
               </a>
             </li>
@@ -71,7 +71,7 @@
     </div>
   </header>
 
-  <section class="about">
+  <section class="about" id="about" data-scroll="about">
     <div class="container">
       <div class="about__inner">
         <h2 class="title about__title">
@@ -189,7 +189,7 @@
     </div>
   </section>
 
-  <section class="portfolio">
+  <section class="portfolio" id="portfolio" data-scroll="portfolio">
     <div class="container">
       <div class="portfolio__top">
         <h2 class="portfolio__title title">
@@ -346,7 +346,7 @@
     </div>
   </section>
 
-  <section class="slider-blog">
+  <section class="slider-blog" id="blog" data-scroll="blog">
     <div class="container">
 
       <div class="slider-blog__inner">
@@ -429,7 +429,7 @@
     </div>
   </section>
 
-  <section class="team">
+  <section class="team" id="team" data-scroll="team">
     <div class="container">
       <h2 class="team__title title">
         Our Team
@@ -629,7 +629,7 @@
     </div>
   </div>
 
-  <section class="getform">
+  <section class="getform" id="contact">
     <div class="container">
       <h2 class="getform__title title">
         Get in Touch
@@ -651,8 +651,7 @@
     </div>
   </section>
 
-
- <footer class="footer">
+ <footer class="footer" data-scroll="contact">
     <div class="footer__top">
       <a class="footer__logo" href="#">
         <img class="logo__img footer__img" src="img/footer-logo.png" alt="logotype for portfolio OM">
@@ -697,7 +696,7 @@
         <a class="mail" href="mailto:info@mail.com">
           info@mail.com
         </a>
-        <a class="arrowup" href="#">
+        <a class="arrowup" href="#home">
           <svg class="svg-up" fill="none">
             <use xlink:href="img/sprite.svg#up"></use>
           </svg>
