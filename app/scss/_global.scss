@@ -147,3 +147,7 @@ body {
    overflow: hidden;
 }
 
+.header-top.header-top--padding{
+  padding-bottom: 20px;
+  transition: padding-bottom .3s ease-in;
+}

@@ -174,3 +174,16 @@ elemsLink.forEach((link) => {
   });
 });
 
+// corection padding in header-top to scroll
+
+const headerTop = document.querySelector('.header-top');
+
+window.onscroll = function(){
+  if(window.scrollY > 200){
+    headerTop.classList.add('header-top--padding');
+    menuList.style.top = '84px';
+  }else{
+    headerTop.classList.remove('header-top--padding');
+    menuList.style.top = '93px';
+  }
+}

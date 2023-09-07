@@ -11,7 +11,13 @@
 }
 
 .header-top {
+  position: fixed;
   padding-bottom: 29px;
+  right: 0;
+  left: 0;
+  background-color: $white;
+  z-index: 5;
+  transition: padding-bottom .3s ease-in-out;
 
   .menu {
     display: flex;
@@ -120,6 +126,7 @@
 }
 
 .header-content {
+  padding-top: 93px;
   background-image: url("../img/bg/header-bg.jpg");
   background-position: center center;
   background-repeat: no-repeat;
