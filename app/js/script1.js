@@ -4,25 +4,17 @@ slider();
 const categoryBtn = document.querySelectorAll(".portfolio__btn");
 const contentImage = document.querySelectorAll(".portfolio-content__item");
 const container = document.querySelector(".portfolio-content__items");
-
 // ======= Mix Element portfolio =======
-
 categoryBtn.forEach((elem) => {
-  // buttons
   elem.addEventListener("click", function () {
-    // click on btn
     categoryBtn.forEach((elem) => {
-      elem.classList.remove("active-btn"); // delete class
+      elem.classList.remove("active-btn");
     });
-
-    elem.classList.add("active-btn"); // add class
+    elem.classList.add("active-btn");
     const dataFilter = elem.getAttribute("data-filter");
-
     const imgItems = [];
-
     contentImage.forEach((img) => {
       const dataItem = img.getAttribute("data-item");
-
       if (dataItem === dataFilter || dataFilter === "All") {
         imgItems.push(img);
       } else {
@@ -32,27 +24,21 @@ categoryBtn.forEach((elem) => {
     console.log(imgItems);
     container.innerHTML = "";
     console.log(container);
-
     imgItems.forEach((elem) => {
       container.appendChild(elem);
       elem.classList.remove("hide");
     });
   });
 });
-
 // ========== Modal Box for video Play =======
-
 const modal = document.querySelector(".modal");
 const videoPlay = document.querySelector(".portfolio__videolink");
 // const overlay = document.querySelector('.overlay');
 const closeModal = document.querySelector(".modal__close");
 const iframe = document.querySelector(".modal__video");
-
-let scrollPosition = 0; // default position page
-
+let scrollPosition = 0;
 videoPlay.addEventListener("click", play);
 closeModal.addEventListener("click", close);
-
 function play(e) {
   // Open modal
   e.preventDefault();
@@ -60,7 +46,6 @@ function play(e) {
   iframe.setAttribute("src", "//www.youtube.com/embed/Q_WHGV5bejk");
   scrollFixed();
 }
-
 window.onclick = function (e) {
   // close modal
   if (
@@ -80,7 +65,6 @@ function scrollFixed() {
   document.body.style.position = "fixed";
   document.body.style.top = -scrollPosition + "px";
 }
-
 function scrollEnable() {
   // enable fixed position page
   document.body.style.overflow = "";
@@ -88,11 +72,8 @@ function scrollEnable() {
   document.body.style.top = "";
   window.scrollTo(0, scrollPosition);
 }
-
 // // ==== form POST
-
 const form = document.querySelector(".getform__form");
-
 form.addEventListener("submit", function (e) {
   fetch("/index/", {
     method: "POST",
@@ -112,15 +93,11 @@ form.addEventListener("submit", function (e) {
     });
   e.preventDefault();
 });
-
 // function validate email input
-
 const inputEmail = document.querySelector(".getform__input--email");
 const validate =
   /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
-
 inputEmail.addEventListener("blur", inputValid);
-
 function inputValid() {
   if (valid(inputEmail.value)) {
     inputEmail.style.backgroundColor = "#90f5a8";
@@ -128,42 +105,31 @@ function inputValid() {
     inputEmail.style.backgroundColor = "#f56151";
   }
 }
-
 function valid(val) {
   return validate.test(val);
 }
-
 // // ==== Menu Burger
-
 const menuList = document.querySelector(".menu__list");
 const itemLi = document.querySelectorAll(".menu__list-item");
-
 const burger = document.querySelector(".burger");
 burger.addEventListener("click", function (e) {
   menuList.classList.toggle("active-menu");
-
   if (menuList) {
     document.body.classList.toggle("unscroll");
   }
-
   itemLi.forEach((elem) => {
     elem.classList.toggle("menu__list--active");
   });
 });
-
 // smooth scroll section
-
 const elemsLink = document.querySelectorAll('a[href*="#"]');
 const dataAttr = document.querySelectorAll('[data-scroll]');
-
 elemsLink.forEach((link) => {
-  link.addEventListener('click', function(e) {
+  link.addEventListener('click', function (e) {
     e.preventDefault();
-
     const targetId = link.getAttribute('href').substring(1); // delite first symbol href #
-
     dataAttr.forEach((elem) => {
-      if(elem.dataset.scroll === targetId){
+      if (elem.dataset.scroll === targetId) {
         console.log(elem.dataset.scroll)
         elem.scrollIntoView({
           behavior: 'smooth',
@@ -173,16 +139,13 @@ elemsLink.forEach((link) => {
     })
   });
 });
-
 // corection padding in header-top to scroll
-
 const headerTop = document.querySelector('.header-top');
-
-window.onscroll = function(){
-  if(window.scrollY > 200){
+window.onscroll = function () {
+  if (window.scrollY > 200) {
     headerTop.classList.add('header-top--padding');
     menuList.style.top = '84px';
-  }else{
+  } else {
     headerTop.classList.remove('header-top--padding');
     menuList.style.top = '93px';
   }
